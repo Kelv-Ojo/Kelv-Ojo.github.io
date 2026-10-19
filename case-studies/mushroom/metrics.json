@@ -1,0 +1,105 @@
+{
+  "source_url": "https://archive.ics.uci.edu/dataset/73/mushroom",
+  "source_sha256": "e65d082030501a3ebcbcd7c9f7c71aa9d28fdfff463bf4cf4716a3fe13ac360e",
+  "rows": 8124,
+  "features": 22,
+  "missing_stalk_root": 2480,
+  "class_counts": {
+    "edible": 4208,
+    "poisonous": 3916
+  },
+  "train_rows": 6499,
+  "test_rows": 1625,
+  "test_poisonous": 783,
+  "split": "Stratified row holdout, random_state=42. Does not test new species.",
+  "models": [
+    {
+      "model": "Majority baseline",
+      "cv_accuracy_mean": 0.5179258601290935,
+      "cv_accuracy_std": 0.00030913089822585087,
+      "cv_poisonous_recall_mean": 0.0,
+      "test_accuracy": 0.5181538461538462,
+      "test_precision_poisonous": 0.0,
+      "test_recall_poisonous": 0.0,
+      "test_f1_poisonous": 0.0,
+      "test_roc_auc": 0.5,
+      "false_negatives": 783,
+      "confusion_matrix_true_rows_predicted_columns": [
+        [
+          842,
+          0
+        ],
+        [
+          783,
+          0
+        ]
+      ]
+    },
+    {
+      "model": "Logistic regression with PCA",
+      "cv_accuracy_mean": 0.9996923076923077,
+      "cv_accuracy_std": 0.0006153846153845955,
+      "cv_poisonous_recall_mean": 0.9993620414673046,
+      "test_accuracy": 0.9987692307692307,
+      "test_precision_poisonous": 1.0,
+      "test_recall_poisonous": 0.9974457215836526,
+      "test_f1_poisonous": 0.9987212276214834,
+      "test_roc_auc": 0.9999817984910949,
+      "false_negatives": 2,
+      "confusion_matrix_true_rows_predicted_columns": [
+        [
+          842,
+          0
+        ],
+        [
+          2,
+          781
+        ]
+      ]
+    },
+    {
+      "model": "Decision tree",
+      "cv_accuracy_mean": 0.9996923076923077,
+      "cv_accuracy_std": 0.0006153846153845955,
+      "cv_poisonous_recall_mean": 0.9993620414673046,
+      "test_accuracy": 1.0,
+      "test_precision_poisonous": 1.0,
+      "test_recall_poisonous": 1.0,
+      "test_f1_poisonous": 1.0,
+      "test_roc_auc": 1.0,
+      "false_negatives": 0,
+      "confusion_matrix_true_rows_predicted_columns": [
+        [
+          842,
+          0
+        ],
+        [
+          0,
+          783
+        ]
+      ]
+    },
+    {
+      "model": "Categorical naive Bayes on binary encoded features",
+      "cv_accuracy_mean": 0.9403007046840764,
+      "cv_accuracy_std": 0.009266035471972618,
+      "cv_poisonous_recall_mean": 0.892444369710218,
+      "test_accuracy": 0.9335384615384615,
+      "test_precision_poisonous": 0.9828326180257511,
+      "test_recall_poisonous": 0.8773946360153256,
+      "test_f1_poisonous": 0.9271255060728745,
+      "test_roc_auc": 0.9955163616397134,
+      "false_negatives": 96,
+      "confusion_matrix_true_rows_predicted_columns": [
+        [
+          830,
+          12
+        ],
+        [
+          96,
+          687
+        ]
+      ]
+    }
+  ]
+}
