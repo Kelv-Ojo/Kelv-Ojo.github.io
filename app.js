@@ -11,10 +11,26 @@ document.querySelectorAll('.chart').forEach(chart=>{
 });
 dialog.addEventListener('close',()=>dialog.classList.remove('chart-dialog'));
 
-const motionToggle=document.querySelector(".motion-toggle");
-motionToggle.addEventListener("click",()=>{
- const paused=motionToggle.getAttribute("aria-pressed")!=="true";
- motionToggle.setAttribute("aria-pressed",String(paused));
- motionToggle.textContent=paused?"Resume animation":"Pause animation";
- document.querySelector(".signature-art").classList.toggle("is-paused",paused);
+
+const star=document.querySelector(".signature-art");
+const starHint=star.querySelector(".motion-hint");
+const reducedMotion=window.matchMedia("(prefers-reduced-motion: reduce)");
+function resetStar(){star.style.setProperty("--star-x","0px");star.style.setProperty("--star-y","0px");star.style.setProperty("--star-tilt","0deg");}
+star.addEventListener("click",()=>{
+ const paused=star.getAttribute("aria-pressed")!=="true";
+ star.setAttribute("aria-pressed",String(paused));
+ star.setAttribute("aria-label",paused?"Resume star animation":"Pause star animation");
+ star.classList.toggle("is-paused",paused);
+ starHint.textContent=paused?"Paused · click or tap to resume":"Click or tap to pause";
+ resetStar();
 });
+star.addEventListener("pointermove",event=>{
+ if(reducedMotion.matches||star.classList.contains("is-paused")||event.pointerType==="touch")return;
+ const rect=star.getBoundingClientRect();
+ const x=Math.max(-1,Math.min(1,(event.clientX-rect.left)/rect.width*2-1));
+ const y=Math.max(-1,Math.min(1,(event.clientY-rect.top)/rect.height*2-1));
+ star.style.setProperty("--star-x",x*12+"px");
+ star.style.setProperty("--star-y",y*10+"px");
+ star.style.setProperty("--star-tilt",x*5+"deg");
+});
+star.addEventListener("pointerleave",resetStar);
