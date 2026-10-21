@@ -25,7 +25,7 @@ header nav a,header>a:last-child{min-height:44px;display:inline-flex;align-items
 .project-featured .hotel-visual .track{background:#354359}.project-featured .hotel-visual i{background:#c9a967}.project-featured .bar-label{font-size:13px}.project-featured .hotel-visual small{font-size:11px;margin-top:20px}
 .project .chart,.project-supporting .chart{height:auto;aspect-ratio:1.65;background:#fff;padding:18px 16px 36px;border:1px solid var(--line);position:relative;cursor:zoom-in}
 .project .chart img{display:block;width:100%;height:100%;object-fit:contain}
-.chart::after{content:'Enlarge chart ↗';position:absolute;bottom:9px;right:14px;color:var(--muted);font-size:11px;text-decoration:underline;text-underline-offset:3px}
+.chart::after{content:'Enlarge preview ↗';position:absolute;bottom:9px;right:14px;color:var(--muted);font-size:11px;text-decoration:underline;text-underline-offset:3px}
 .chart:hover{border-color:var(--gold)}.chart:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
 .project-body{display:flex;flex-direction:column;flex:1}.project-body h3{font-size:25px;line-height:1.3;letter-spacing:-.025em}.project-featured .project-body h3{font-size:32px}
 .project-body>.project-category{text-transform:none;color:#806329;font-size:13px}.project-body>p:not(.eyebrow){font-size:15px;line-height:1.8}
@@ -72,3 +72,11 @@ button.signature-art{display:block;border:0;padding:0;background:none;color:var(
 @keyframes star-breathe{0%,100%{transform:scale(.97);opacity:.75}50%{transform:scale(1.045);opacity:1}}
 @media(prefers-reduced-motion:no-preference){.signature-art svg>circle:last-child{animation-duration:12s;stroke-width:1.8}.signature-art svg>path{transform-origin:200px 160px;animation:star-breathe 4s ease-in-out infinite}.signature-art.is-paused svg>path{animation-play-state:paused}}
 @media(prefers-reduced-motion:reduce){.signature-art svg{transform:none}.motion-hint{display:none}}
+
+/* Genuine report preview and a more personal closing. */
+.featured-artifact{grid-column:1/-1;margin:0;width:100%;align-self:stretch}
+.project .featured-artifact .chart{aspect-ratio:2.6;height:auto;padding:16px 16px 36px}
+.featured-artifact figcaption{font-size:12px;line-height:1.7;color:var(--muted);margin-top:10px}
+.about-identity img{display:block;border-radius:50%;margin-bottom:22px}
+.contact h2{font-size:clamp(32px,3vw,42px);letter-spacing:-.03em}
+@media(max-width:650px){.project .featured-artifact .chart{aspect-ratio:1.8;padding:10px 10px 32px}.featured-artifact figcaption{font-size:11px}.about-identity{display:flex;align-items:center;gap:18px}.about-identity img{width:60px;height:60px;margin:0}.contact .hero-links{gap:16px}}
