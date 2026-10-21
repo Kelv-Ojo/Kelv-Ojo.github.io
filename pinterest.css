@@ -23,3 +23,17 @@ header{background:#fafaf8;color:var(--ink);border-color:#deded9;min-height:82px}
 /* A moving gold arc makes the orbit visible without moving the content. */
 @keyframes star-orbit{to{transform:rotate(360deg)}}
 @media(prefers-reduced-motion:no-preference){.signature-art svg>circle:last-child{stroke:#987334;stroke-width:1.5;stroke-dasharray:2 8 2 8 42 8;transform-origin:200px 160px;animation:star-orbit 24s linear infinite}}
+
+/* Project previews keep the analysis readable before opening the detail. */
+.project{transition:border-color .16s ease}.project:hover,.project:focus-within{border-bottom-color:#987334}
+.project-actions a,.project-actions button,.hero-links a,nav a{transition:color .16s ease,background-color .16s ease}
+.project-actions a:hover,.project-actions button:hover,nav a:hover{text-decoration:underline;text-underline-offset:5px}
+.chart{position:relative;cursor:zoom-in}.chart::after{content:'Expand chart';position:absolute;right:12px;bottom:10px;font-size:11px;background:#fff;padding:4px 8px;color:#172238;border:1px solid #deded9}
+.chart:focus-visible{outline:2px solid #987334;outline-offset:4px}
+.crm-preview{padding:24px;background:#fff;border:1px solid #deded9;min-height:270px;overflow:auto;color:#172238}
+.preview-heading{display:flex;justify-content:space-between;gap:12px;font-weight:700}.preview-heading span,.preview-caption{font-size:11px;font-weight:400;color:#526074}
+.crm-preview p{font-size:13px}.crm-preview table{width:100%;border-collapse:collapse;font-size:12px;text-align:left}.crm-preview th,.crm-preview td{padding:10px 5px;border-bottom:1px solid #deded9}
+#case-dialog.image-dialog{max-width:1050px;width:92vw}#case-dialog.image-dialog img{display:block;width:100%;max-height:72vh;object-fit:contain;background:#fff}
+@media(max-width:650px){.hero-links{flex-wrap:wrap}.crm-preview{padding:16px}.crm-preview table{font-size:11px}}
+
+.stack-list{display:grid;grid-template-columns:1fr 1fr;gap:0 36px;margin:0}.stack-list>div{padding:20px 0;border-top:1px solid #d1d2cd}.stack-list dt{font-weight:700;margin-bottom:8px}.stack-list dd{margin:0;color:#526074;font-size:14px;max-width:60ch}@media(max-width:650px){.stack-list{grid-template-columns:1fr}}
