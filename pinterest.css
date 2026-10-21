@@ -1,0 +1,21 @@
+/* Clean project grids and dotted artwork, inspired by Kelvin's saved board. */
+body{font-family:'DM Sans',sans-serif;background:#fafaf8}
+h1,h2,h3,.kpis strong{font-family:Manrope,sans-serif}
+header{background:#fafaf8;color:var(--ink);border-color:#deded9;min-height:82px}
+.brand{letter-spacing:0}.brand span{color:#8a6b30}
+.hero{display:grid;grid-template-columns:1.4fr 1fr;align-items:center;gap:48px;background:#fafaf8;color:var(--ink);padding-top:64px;padding-bottom:64px;border-bottom:1px solid #deded9}
+.hero h1{font-size:clamp(36px,4.5vw,60px);letter-spacing:-2px;max-width:650px}
+.role{color:#806329;font-size:19px}.intro{color:#526074;max-width:560px;font-size:16px}
+.signature-art{color:#172238;max-width:400px;width:100%;justify-self:end}.signature-art svg{display:block;width:100%;height:auto}
+.button{background:#172238;color:#fff}.button:hover{background:#32425b}
+.section{padding-top:56px;padding-bottom:56px}.section-heading{margin-bottom:24px}
+.project-grid{gap:40px 32px}.project,.project-supporting{grid-column:auto;display:flex;flex-direction:column;align-items:stretch;gap:24px;border-bottom:1px solid #d1d2cd;padding-bottom:28px}
+.project-featured{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:40px}
+.project .chart,.project-supporting .chart{height:270px;background:#fff;padding:16px;border-color:#deded9}
+.project-featured .hotel-visual{min-height:320px;background:#fff;border-color:#deded9}
+.project-body{display:flex;flex-direction:column;flex:1}.project-actions{margin-top:auto;padding-top:16px}.tags{margin-bottom:20px}
+.project-body h3{font-size:24px}.project-body>.project-category{text-transform:none;color:#806329}
+.project:not(.project-featured)>.hotel-visual{min-height:270px;background:#f0f0eb;padding:24px}
+.approach{background:#f0f0eb}
+@media(max-width:650px){.hero{grid-template-columns:1fr;gap:24px;padding-top:36px;padding-bottom:32px}.hero h1{font-size:38px;letter-spacing:-1.2px}.signature-art{width:160px;justify-self:center}.project-grid{grid-template-columns:1fr}.project-featured{display:flex}.project .chart,.project-supporting .chart{height:230px}.section{padding-top:32px;padding-bottom:32px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
