@@ -10,3 +10,11 @@ document.querySelectorAll('.chart').forEach(chart=>{
  chart.addEventListener('click',enlarge);chart.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();enlarge();}});
 });
 dialog.addEventListener('close',()=>dialog.classList.remove('chart-dialog'));
+
+const motionToggle=document.querySelector(".motion-toggle");
+motionToggle.addEventListener("click",()=>{
+ const paused=motionToggle.getAttribute("aria-pressed")!=="true";
+ motionToggle.setAttribute("aria-pressed",String(paused));
+ motionToggle.textContent=paused?"Resume animation":"Pause animation";
+ document.querySelector(".signature-art").classList.toggle("is-paused",paused);
+});
