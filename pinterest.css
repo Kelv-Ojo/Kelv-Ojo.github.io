@@ -19,3 +19,7 @@ header{background:#fafaf8;color:var(--ink);border-color:#deded9;min-height:82px}
 .approach{background:#f0f0eb}
 @media(max-width:650px){.hero{grid-template-columns:1fr;gap:24px;padding-top:36px;padding-bottom:32px}.hero h1{font-size:38px;letter-spacing:-1.2px}.signature-art{width:160px;justify-self:center}.project-grid{grid-template-columns:1fr}.project-featured{display:flex}.project .chart,.project-supporting .chart{height:230px}.section{padding-top:32px;padding-bottom:32px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+
+/* A moving gold arc makes the orbit visible without moving the content. */
+@keyframes star-orbit{to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:no-preference){.signature-art svg>circle:last-child{stroke:#987334;stroke-width:1.5;stroke-dasharray:2 8 2 8 42 8;transform-origin:200px 160px;animation:star-orbit 24s linear infinite}}
