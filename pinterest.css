@@ -23,3 +23,20 @@ header{background:#fafaf8;color:var(--ink);border-color:#deded9;min-height:82px}
 /* A moving gold arc makes the orbit visible without moving the content. */
 @keyframes star-orbit{to{transform:rotate(360deg)}}
 @media(prefers-reduced-motion:no-preference){.signature-art svg>circle:last-child{stroke:#987334;stroke-width:1.5;stroke-dasharray:2 8 2 8 42 8;transform-origin:200px 160px;animation:star-orbit 24s linear infinite}}
+
+/* Preview-only refinements: existing page layout and identity stay intact. */
+.project:not(.project-featured):not(.project-supporting){grid-template-columns:300px minmax(0,1fr);align-items:start}
+.project .chart{position:relative;cursor:zoom-in}.project:not(.project-featured) .chart{height:250px;padding:14px;background:white}
+.chart::after{content:'Enlarge chart';position:absolute;bottom:8px;right:8px;background:#fff;border:1px solid #d1d2cd;color:#172238;padding:3px 8px;font-size:11px}
+.chart:focus-visible{outline:2px solid #987334;outline-offset:4px}
+.report-preview{min-height:250px;background:#fff;border:1px solid #deded9;padding:20px;color:#172238}
+.preview-title{font-size:15px;font-weight:700;margin:0 0 16px}.preview-stat{display:flex;align-items:baseline;gap:12px}.preview-stat strong{font-size:30px}.preview-stat span,.report-preview>p:not(.preview-title){font-size:11px}
+.quality-bar{display:flex;height:18px;margin:18px 0 8px}.quality-bar span:first-child{background:#65798e}.quality-bar span:last-child{background:#c9a967}
+.missing-label{float:right}.preview-note{font-size:11px;color:#526074;border-top:1px solid #deded9;padding-top:10px;margin-top:16px}
+.workflow-preview{margin:0;padding-left:22px;font-size:12px}.workflow-preview li{padding:4px 0}
+.report-preview table{width:100%;border-collapse:collapse;text-align:left;font-size:11px}.report-preview th,.report-preview td{border-bottom:1px solid #e0e0dc;padding:7px 4px}.report-preview th{font-weight:600}
+#case-dialog.chart-dialog{width:92vw;max-width:1100px}#case-dialog.chart-dialog img{display:block;width:100%;max-height:72vh;object-fit:contain;background:white}
+@media(max-width:800px){.project:not(.project-featured):not(.project-supporting){grid-template-columns:250px minmax(0,1fr)}}
+@media(max-width:650px){.project:not(.project-featured):not(.project-supporting){grid-template-columns:1fr}.project:not(.project-featured) .chart{height:260px}.report-preview{min-height:0}.report-preview table{font-size:12px}}
+
+.report-preview{width:100%;min-height:290px}.report-preview table{font-size:12px}.workflow-preview{font-size:13px}.report-preview>p:not(.preview-title){font-size:12px}
