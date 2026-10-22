@@ -172,3 +172,20 @@ body.menu-open{overflow:hidden}
 .interest-list li{display:flex;align-items:center;gap:10px;font-size:14px}
 .interest-list svg{width:26px;height:26px;flex:none;color:var(--gold)}
 @media(max-width:768px){.interest-list{flex-direction:column;gap:18px}.interests h3{font-size:20px}}
+
+/* Abstract dot fields use the angel only as a silhouette, never as a solid image. */
+.angel-art{display:block;position:relative;width:200px;aspect-ratio:1/1.08;margin:36px 0 0;padding:0;border:0;background:none;cursor:pointer}
+.angel-art>span{display:block;width:100%;height:100%;background-image:radial-gradient(circle,#172238 1.1px,transparent 1.4px),radial-gradient(circle,#987334b3 .8px,transparent 1.15px);background-size:6px 6px,18px 18px;background-position:0 0,3px 4px;-webkit-mask:url('assets/angel-silhouette.webp') center/contain no-repeat;mask:url('assets/angel-silhouette.webp') center/contain no-repeat;opacity:.7}
+.contact-heading .angel-art{width:120px;margin-top:24px}
+@keyframes particle-drift{0%,100%{transform:translateY(0) rotate(-2deg);opacity:.6}50%{transform:translateY(-8px) rotate(2deg);opacity:.85}}
+@keyframes dot-flow{to{background-position:6px 12px,-15px 22px}}
+@media(prefers-reduced-motion:no-preference){.angel-art>span{animation:particle-drift 7s ease-in-out infinite,dot-flow 4s linear infinite}.angel-art.is-paused>span{animation-play-state:paused}}
+/* Depth belongs to the report frame; source plots and enlarged views stay unchanged. */
+.project .chart{border-color:#d2d4d8;box-shadow:4px 5px 0 #e8e8e1,5px 6px 0 #cdd0d3;transform:perspective(1000px) rotateX(var(--chart-x,0deg)) rotateY(var(--chart-y,0deg));transition:transform 240ms cubic-bezier(.23,1,.32,1),box-shadow 240ms ease}
+.project .chart:focus-visible{box-shadow:4px 5px 0 #e8e8e1,5px 6px 0 var(--gold)}
+.project .hotel-visual{box-shadow:5px 6px 0 #e1ded5}
+@media(hover:hover) and (pointer:fine){.project .chart:hover{box-shadow:6px 8px 0 #e8e8e1,7px 9px 0 #b6bcc4}}
+@media(max-width:768px){.about-identity{flex-wrap:wrap}.about-identity .angel-art{flex-basis:100%;width:100%;height:150px;aspect-ratio:auto;margin:10px 0 0}.about-identity .angel-art>span{width:145px;margin:auto}.contact-heading{display:flex;align-items:center;justify-content:space-between;gap:20px}.contact-heading .angel-art{width:85px;flex:none;margin:0}.project .chart{transform:none;box-shadow:3px 4px 0 #e8e8e1}.project .hotel-visual{box-shadow:3px 4px 0 #e1ded5}}
+@media(prefers-reduced-motion:reduce){.angel-art>span{animation:none}.project .chart{transform:none}}
+
+.contact-heading{display:flex;align-items:center;gap:16px}.contact-heading .angel-art{width:90px;flex:none;margin:0}

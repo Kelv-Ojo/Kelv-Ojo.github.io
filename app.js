@@ -67,3 +67,27 @@ if('IntersectionObserver' in window){
  },{threshold:.06});
  document.querySelectorAll('.hero-copy,.section-heading,.project,.study-item,.steps>div,.about-identity').forEach(element=>arrival.observe(element));
 }
+
+document.querySelectorAll('.angel-art').forEach(art=>{
+ art.addEventListener('click',()=>{
+  const paused=art.getAttribute('aria-pressed')!=='true';
+  art.classList.toggle('is-paused',paused);
+  art.setAttribute('aria-pressed',String(paused));
+  art.setAttribute('aria-label',paused?'Resume angel animation':'Pause angel animation');
+ });
+});
+const finePointer=window.matchMedia('(hover:hover) and (pointer:fine) and (min-width:769px)');
+document.querySelectorAll('.project .chart').forEach(chart=>{
+ function reset(){chart.style.removeProperty('--chart-x');chart.style.removeProperty('--chart-y');}
+ chart.addEventListener('pointermove',event=>{
+  if(!finePointer.matches||reducedMotion.matches)return;
+  const rect=chart.getBoundingClientRect();
+  const x=Math.max(-1,Math.min(1,(event.clientX-rect.left)/rect.width*2-1));
+  const y=Math.max(-1,Math.min(1,(event.clientY-rect.top)/rect.height*2-1));
+  chart.style.setProperty('--chart-x',(-y*1.5)+'deg');
+  chart.style.setProperty('--chart-y',(x*1.5)+'deg');
+ });
+ chart.addEventListener('pointerleave',reset);
+ finePointer.addEventListener('change',reset);
+ reducedMotion.addEventListener('change',reset);
+});
