@@ -199,3 +199,7 @@ body.menu-open{overflow:hidden}
 .project .hotel-visual .hotel-chart::after{color:#d1d9e5}
 .project-featured .hotel-visual{min-height:0}
 @media(max-width:768px){.about>.angel-overlay{left:auto;right:-55px;top:0;width:250px;height:270px;opacity:.13}.project .hotel-visual .hotel-chart{aspect-ratio:1.4;padding-bottom:28px}}
+
+@media(min-width:801px){.tool-list{grid-template-columns:repeat(6,minmax(0,1fr));row-gap:36px}}
+.tool-list li>span{text-align:center;line-height:1.5}
+@media(max-width:768px){.tool-list li>span{text-align:left}}
