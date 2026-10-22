@@ -189,3 +189,13 @@ body.menu-open{overflow:hidden}
 @media(prefers-reduced-motion:reduce){.angel-art>span{animation:none}.project .chart{transform:none}}
 
 .contact-heading{display:flex;align-items:center;gap:16px}.contact-heading .angel-art{width:90px;flex:none;margin:0}
+
+/* The angel sits within the section as a quiet edge overlay, outside the reading layer. */
+.about{position:relative;isolation:isolate;overflow:hidden}
+.about>div:not(.angel-overlay){position:relative;z-index:1}
+.about>.angel-overlay{position:absolute;left:-46px;top:150px;width:370px;height:400px;margin:0;opacity:.26;pointer-events:none;z-index:0}
+.art-paused .angel-art>span{animation-play-state:paused}
+.project .hotel-visual .hotel-chart{background:transparent;border:0;box-shadow:none;aspect-ratio:1.5;padding:0 0 24px;transform:none}
+.project .hotel-visual .hotel-chart::after{color:#d1d9e5}
+.project-featured .hotel-visual{min-height:0}
+@media(max-width:768px){.about>.angel-overlay{left:auto;right:-55px;top:0;width:250px;height:270px;opacity:.13}.project .hotel-visual .hotel-chart{aspect-ratio:1.4;padding-bottom:28px}}

@@ -17,8 +17,9 @@ function resetStar(){star.style.setProperty("--star-x","0px");star.style.setProp
 star.addEventListener("click",()=>{
  const paused=star.getAttribute("aria-pressed")!=="true";
  star.setAttribute("aria-pressed",String(paused));
- star.setAttribute("aria-label",paused?"Resume star animation":"Pause star animation");
+ star.setAttribute("aria-label",paused?"Resume decorative animations":"Pause decorative animations");
  star.classList.toggle("is-paused",paused);
+ document.body.classList.toggle("art-paused",paused);
  resetStar();
 });
 star.addEventListener("pointermove",event=>{
@@ -68,7 +69,7 @@ if('IntersectionObserver' in window){
  document.querySelectorAll('.hero-copy,.section-heading,.project,.study-item,.steps>div,.about-identity').forEach(element=>arrival.observe(element));
 }
 
-document.querySelectorAll('.angel-art').forEach(art=>{
+document.querySelectorAll('button.angel-art').forEach(art=>{
  art.addEventListener('click',()=>{
   const paused=art.getAttribute('aria-pressed')!=='true';
   art.classList.toggle('is-paused',paused);
