@@ -12,7 +12,6 @@ dialog.addEventListener('close',()=>dialog.classList.remove('chart-dialog'));
 
 
 const star=document.querySelector(".signature-art");
-const starHint=star.querySelector(".motion-hint");
 const reducedMotion=window.matchMedia("(prefers-reduced-motion: reduce)");
 function resetStar(){star.style.setProperty("--star-x","0px");star.style.setProperty("--star-y","0px");star.style.setProperty("--star-tilt","0deg");}
 star.addEventListener("click",()=>{
@@ -20,7 +19,6 @@ star.addEventListener("click",()=>{
  star.setAttribute("aria-pressed",String(paused));
  star.setAttribute("aria-label",paused?"Resume star animation":"Pause star animation");
  star.classList.toggle("is-paused",paused);
- starHint.textContent=paused?"Paused · click or tap to resume":"Click or tap to pause";
  resetStar();
 });
 star.addEventListener("pointermove",event=>{
@@ -33,3 +31,39 @@ star.addEventListener("pointermove",event=>{
  star.style.setProperty("--star-tilt",x*5+"deg");
 });
 star.addEventListener("pointerleave",resetStar);
+
+// Native modal behaviour keeps focus and background scrolling inside the drawer.
+const menu=document.querySelector('#mobile-menu');
+const menuToggle=document.querySelector('.menu-toggle');
+const closeMenu=()=>menu.close();
+menuToggle.addEventListener('click',()=>{
+ menu.showModal();menuToggle.setAttribute('aria-expanded','true');
+ document.body.classList.add('menu-open');
+ if(!reducedMotion.matches)menu.animate([{transform:'translateX(100%)'},{transform:'translateX(0)'}],{duration:280,easing:'cubic-bezier(.32,.72,0,1)'});
+});
+menu.querySelector('.menu-close').addEventListener('click',closeMenu);
+menu.querySelectorAll('a').forEach(link=>link.addEventListener('click',event=>{
+ event.preventDefault();
+ const target=document.querySelector(link.hash);
+ closeMenu();
+ history.replaceState(null,'',link.hash);
+ requestAnimationFrame(()=>target.scrollIntoView({behavior:reducedMotion.matches?'instant':'smooth'}));
+}));
+menu.addEventListener('click',event=>{if(event.target===menu){const r=menu.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)closeMenu();}});
+menu.addEventListener('close',()=>{menuToggle.setAttribute('aria-expanded','false');document.body.classList.remove('menu-open');menuToggle.focus({preventScroll:true});});
+window.matchMedia('(min-width: 769px)').addEventListener('change',event=>{if(event.matches&&menu.open)closeMenu();});
+
+// Animate on arrival without hiding content when JavaScript or observers are unavailable.
+if('IntersectionObserver' in window){
+ const arrival=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+   if(!entry.isIntersecting)return;
+   if(!reducedMotion.matches)entry.target.animate(
+    [{opacity:0,transform:'translateY(18px)'},{opacity:1,transform:'translateY(0)'}],
+    {duration:560,easing:'cubic-bezier(.22,1,.36,1)'}
+   );
+   arrival.unobserve(entry.target);
+  });
+ },{threshold:.06});
+ document.querySelectorAll('.hero-copy,.section-heading,.project,.study-item,.steps>div,.about-identity').forEach(element=>arrival.observe(element));
+}
