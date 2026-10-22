@@ -163,3 +163,12 @@ body.menu-open{overflow:hidden}
 @media(prefers-reduced-motion:reduce){.signature-art svg>*{animation:none!important}.button:hover,.button:active{transform:none}}
 
 .study-item:first-child .study-brand svg{width:100px;height:36px}
+
+/* Personal interests share one quiet, consistent icon style. */
+.interests{margin-top:32px;padding-top:24px;border-top:1px solid var(--line)}
+.interests h3{font-size:20px;letter-spacing:-.025em;margin:0 0 10px}
+.interests p{margin:0 0 20px}
+.interest-list{list-style:none;display:flex;flex-wrap:wrap;gap:20px 28px;margin:0;padding:0}
+.interest-list li{display:flex;align-items:center;gap:10px;font-size:14px}
+.interest-list svg{width:26px;height:26px;flex:none;color:var(--gold)}
+@media(max-width:768px){.interest-list{flex-direction:column;gap:18px}.interests h3{font-size:20px}}
