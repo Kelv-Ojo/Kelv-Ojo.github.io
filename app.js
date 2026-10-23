@@ -1,7 +1,18 @@
 const dialog=document.querySelector('#case-dialog'),content=document.querySelector('#case-content');let opener;
 
 document.querySelector('.dialog-close').addEventListener('click',()=>dialog.close());dialog.addEventListener('close',()=>opener?.focus());dialog.addEventListener('click',e=>{if(e.target===dialog){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close()}});
-document.querySelectorAll('[data-filter]').forEach(button=>button.addEventListener('click',()=>{document.querySelectorAll('[data-filter]').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));let count=0;document.querySelectorAll('.project').forEach(card=>{card.hidden=button.dataset.filter!=='all'&&!card.dataset.tags.split(' ').includes(button.dataset.filter);if(!card.hidden)count++});document.querySelector('#filter-status').textContent=`Showing ${count} projects`;}));
+document.querySelectorAll('[data-filter]').forEach(button=>button.addEventListener('click',()=>{
+ document.querySelectorAll('[data-filter]').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));
+ let count=0,moreCount=0;
+ document.querySelectorAll('.project').forEach(card=>{
+  card.hidden=button.dataset.filter!=='all'&&!card.dataset.tags.split(' ').includes(button.dataset.filter);
+  if(!card.hidden){count++;if(card.closest('#more-projects'))moreCount++;}
+ });
+ const more=document.querySelector('#more-projects');more.hidden=moreCount===0;
+ more.querySelector('summary').textContent=`More projects (${moreCount})`;
+ more.open=button.dataset.filter!=='all'&&moreCount>0;
+ document.querySelector('#filter-status').textContent=`Showing ${count} projects`;
+}));
 
 document.querySelectorAll('.chart').forEach(chart=>{
  const source=chart.querySelector('img');chart.tabIndex=0;chart.setAttribute('role','button');chart.setAttribute('aria-label','Enlarge preview: '+source.alt);
