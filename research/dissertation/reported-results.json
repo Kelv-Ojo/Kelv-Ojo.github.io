@@ -1,0 +1,113 @@
+{
+  "status": "Transcribed from recovered dissertation; not independently reproduced",
+  "forecast_years": [
+    2025,
+    2026,
+    2027,
+    2028,
+    2029
+  ],
+  "unit_status": "Labelled kWh in report; possible factor-of-1000 error unresolved",
+  "targets": "Report-defined groups; electricity is grouped with renewables without generation attribution",
+  "evaluation": [
+    {
+      "model": "ARIMA",
+      "target": "renewable",
+      "mae": 11800000,
+      "rmse": 12300000,
+      "mape_pct": 3.36
+    },
+    {
+      "model": "ARIMA",
+      "target": "non_renewable",
+      "mae": 144000000,
+      "rmse": 145000000,
+      "mape_pct": 13.08
+    },
+    {
+      "model": "Random Forest",
+      "target": "renewable",
+      "mae": 5514513.38,
+      "rmse": 6884494.48,
+      "mape_pct": 1.98
+    },
+    {
+      "model": "Random Forest",
+      "target": "non_renewable",
+      "mae": 43190925.23,
+      "rmse": 50590147.45,
+      "mape_pct": 3.15
+    },
+    {
+      "model": "XGBoost",
+      "target": "renewable",
+      "mae": 5295334.87,
+      "rmse": 6261134.0,
+      "mape_pct": 1.84
+    },
+    {
+      "model": "XGBoost",
+      "target": "non_renewable",
+      "mae": 37328065.4,
+      "rmse": 47964537.03,
+      "mape_pct": 2.7
+    }
+  ],
+  "forecast_scale": 100000000.0,
+  "forecast_columns": [
+    "year",
+    "arima_r",
+    "arima_nr",
+    "rf_r",
+    "rf_nr",
+    "xgb_r",
+    "xgb_nr"
+  ],
+  "forecast_rows": [
+    [
+      "2025",
+      "3.582753",
+      "11.41329",
+      "3.553437",
+      "11.34638",
+      "3.555638",
+      "11.54456"
+    ],
+    [
+      "2026",
+      "3.593905",
+      "11.21071",
+      "3.559181",
+      "11.22184",
+      "3.559818",
+      "11.29525"
+    ],
+    [
+      "2027",
+      "3.597458",
+      "11.30816",
+      "3.544033",
+      "11.16742",
+      "3.522626",
+      "11.31637"
+    ],
+    [
+      "2028",
+      "3.592688",
+      "11.41368",
+      "3.545740",
+      "11.15790",
+      "3.531826",
+      "11.27360"
+    ],
+    [
+      "2029",
+      "3.586763",
+      "11.22071",
+      "3.546094",
+      "11.13716",
+      "3.520588",
+      "11.31154"
+    ]
+  ]
+}
