@@ -1,0 +1,30 @@
+name: Mushroom benchmark validation
+on:
+  push:
+    paths: ['case-studies/mushroom/**', '.github/workflows/mushroom-validation.yml']
+  pull_request:
+    paths: ['case-studies/mushroom/**', '.github/workflows/mushroom-validation.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: case-studies/mushroom
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r requirements.txt
+      - run: python -m unittest -v test_preprocessing
+      - name: Reproduce fixed benchmark results
+        run: >-
+          python -c "import json,subprocess,sys; from pathlib import Path;
+          expected=json.loads(Path('metrics.json').read_text());
+          subprocess.run([sys.executable,'analyse.py','--download'],check=True);
+          assert json.loads(Path('metrics.json').read_text())==expected"

@@ -44,14 +44,8 @@ assert int((X=='?').sum().sum())==2480
 assert (X=='?').sum().loc['11']==2480
 train,test=train_test_split(df.index,test_size=.2,stratify=y,random_state=42)
 assert not set(train)&set(test)
-def encode():
-    return [SimpleImputer(missing_values='?',strategy='most_frequent'),
-            OneHotEncoder(handle_unknown='ignore',sparse_output=False)]
-models={
- 'Majority baseline':DummyClassifier(strategy='most_frequent'),
- 'Logistic regression with PCA':make_pipeline(*encode(),StandardScaler(),PCA(n_components=.95,svd_solver='full'),LogisticRegression(max_iter=2000,random_state=42)),
- 'Decision tree':make_pipeline(*encode(),DecisionTreeClassifier(max_depth=10,random_state=42)),
- 'Categorical naive Bayes on binary encoded features':make_pipeline(*encode(),CategoricalNB(min_categories=2))}
+from models import make_models
+models=make_models()
 cv=StratifiedKFold(n_splits=5,shuffle=True,random_state=42)
 rows=[]
 for name,model in models.items():

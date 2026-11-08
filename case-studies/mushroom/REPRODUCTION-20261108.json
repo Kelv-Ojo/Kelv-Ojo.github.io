@@ -1,0 +1,28 @@
+{
+  "date": "2026-11-08",
+  "metrics_exactly_reproduced": true,
+  "source_sha256": "e65d082030501a3ebcbcd7c9f7c71aa9d28fdfff463bf4cf4716a3fe13ac360e",
+  "method": "Clean isolated execution of analyse.py --download with pinned direct dependencies",
+  "models": [
+    {
+      "model": "Majority baseline",
+      "test_accuracy": 0.5181538461538462,
+      "false_negatives": 783
+    },
+    {
+      "model": "Logistic regression with PCA",
+      "test_accuracy": 0.9987692307692307,
+      "false_negatives": 2
+    },
+    {
+      "model": "Decision tree",
+      "test_accuracy": 1.0,
+      "false_negatives": 0
+    },
+    {
+      "model": "Categorical naive Bayes on binary encoded features",
+      "test_accuracy": 0.9335384615384615,
+      "false_negatives": 96
+    }
+  ]
+}

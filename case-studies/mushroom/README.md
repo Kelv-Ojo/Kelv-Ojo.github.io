@@ -2,6 +2,16 @@
 
 Educational machine learning project by Kelvin Ojogbede, developed from 7072CEM coursework. This portfolio revision and validation were prepared with AI assistance. It is not a mushroom identification or food-safety tool.
 
+
+## Visual evidence
+
+![Accuracy and missed poisonous labels plotted from the existing metrics](assets/screenshots/model-comparison.png)
+
+Accuracy and missed poisonous labels plotted from the existing metrics.json. Confusion-matrix totals were checked; model training was not rerun in this visualisation pass. Educational benchmark, not a food-safety tool.
+
+Images are static previews. Open them at full size for detail; follow the reproduction notes to inspect the underlying work.
+
+
 ## Question
 
 How do logistic regression, a decision tree and naive Bayes compare on a categorical benchmark, and what does accuracy hide about missed positive cases?
@@ -47,3 +57,12 @@ On Windows, activate with `.venv\Scripts\activate`. The explicit download option
 - Why put preprocessing inside cross-validation? Each validation fold must be evaluated using transformations learnt without its rows.
 - Why report false negatives? A high overall accuracy can conceal missed positive labels, as the naive Bayes results show.
 - Why not use this for foraging? The benchmark does not validate field identification, unknown species or consequences of measurement errors.
+
+## Refresh the visual only
+
+With the existing metrics.json available, run `python -m pip install -r requirements-visuals.txt` followed by `python plot_results.py`. This validates the saved confusion-matrix counts and refreshes the chart without running model training.
+
+
+## Fresh reproduction on 8 November 2026
+
+A clean Windows Python 3.12 run using the pinned dependencies reproduced metrics.json exactly, including every confusion matrix. See [execution record](REPRODUCTION-20261108.json). Run `python -m unittest -v test_preprocessing` to check unknown-category handling and fold-specific imputation. The original coursework notebook is not republished or certified; the public pipeline is a separately documented benchmark revision.
