@@ -1,9 +1,9 @@
 name: Verify interactive dashboards
 on:
   push:
-    paths: ['demos/**', '*.html', '.github/workflows/dashboard-validation.yml']
+    paths: ['demos/**', '*.html', '.gitattributes', '.github/workflows/dashboard-validation.yml']
   pull_request:
-    paths: ['demos/**', '*.html', '.github/workflows/dashboard-validation.yml']
+    paths: ['demos/**', '*.html', '.gitattributes', '.github/workflows/dashboard-validation.yml']
   workflow_dispatch:
 permissions:
   contents: read
