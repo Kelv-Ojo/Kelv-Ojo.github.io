@@ -31,3 +31,15 @@ Executed checks this continuation: target missing/duplicate/source-cell tests; 3
 5. Chatbot needs original questionnaire/response exports, executed-method provenance and applicable consent/rights confirmation privately. Existing PRs require explicit merge approval.
 
 Do not repeat prior archive searches, Hotel acceptance or Mushroom reproduction without new evidence or relevant changes. Exact local paths, commits and next actions are saved in outputs/ROADMAP-RESUME-CHECKPOINT.md in the shared workspace.
+
+## Dissertation visual gallery delivery — 9 November 2026
+
+Published the expanded gallery in energy commits d75f782 and 9341839 and portfolio commit 52d0fc6. [Live gallery](https://kelv-ojo.github.io/energy.html#visual-gallery) · [GitHub gallery and complete inventory](https://github.com/Kelv-Ojo/uk-energy-analysis/blob/main/docs/VISUAL-GALLERY.md).
+
+Inventory covers 32 appendix captions, 33 approved dissertation visual assets and 29 saved notebook PNG outputs. Identical decoded images share display entries; exact notebook image bytes remain traceable. The gallery presents 49 distinct recovered originals plus 14 source-checked figures, including reused historical charts, newly validated sector/fuel/annual-change/correlation charts and plots of the separate historical backtest. Originals remain unchanged and labelled not reproduced. Private ethics/administrative material and the complete dissertation/notebook are excluded.
+
+Verified all 63 displayed image URLs on both GitHub raw delivery and the live portfolio: HTTP success, matching SHA256 and image decoding. Browser checks confirm the live 63-figure gallery, stylesheet, expandable originals and GitHub rendering without broken-image errors. Local responsive review at 390px found no horizontal overflow and a single-column archive; desktop review retained the existing site styling. Evidence is saved under outputs/energy-gallery-review/ in the shared workspace.
+
+New gallery CI passed: [analysis and gallery](https://github.com/Kelv-Ojo/uk-energy-analysis/actions/runs/42650242722), [chronological backtest](https://github.com/Kelv-Ojo/uk-energy-analysis/actions/runs/42650242742). [Portfolio deployment passed](https://github.com/Kelv-Ojo/Kelv-Ojo.github.io/actions/runs/42650186801).
+
+Recorded original caption discrepancies: repeated Figure 31; reused paired-scatter and ARIMA images; the final comparison caption points to an ARIMA-only image, while a different body image contains the actual model overlay. No silent correction of source figures or promotion of unverified forecast values. Source-cell tracing, percentage/correlation recomputation and saved forecast metric reconciliation passed. Gallery completion does not make the original modelling research reproduction Done; the existing Energy task remains In Progress with its previous blockers.
