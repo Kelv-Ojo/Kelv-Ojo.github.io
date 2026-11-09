@@ -1,11 +1,11 @@
 {
   "acceptance_cases": 626,
   "files": {
-    "demos/dashboard-data/hotel.json": "5044f320c27071eefe81c8cadafdc05fa7f5f444835d5a341de0344e128a553c",
-    "demos/dashboard-data/sales.json": "af196c05fc37a4334f6585a363f31b76335683ef881d4ee24ccfdc0ce542f5fa",
-    "demos/dashboard-data/churn.json": "300d28080fe08fdbc26f6e5edeaef80e461fd8241de29111ceabf2d7244087f3",
-    "demos/dashboard-data/energy.json": "aad58dd50173b6b9ea37b7e8725cb7ffb08b52af0727db55ba7efc1eb4d085eb",
-    "demos/dashboard-data/acceptance-cases.json": "5e59a730b1767867da3b41f76e4db38d2019996a719ccf1264a79ae2b6638dd5",
+    "demos/dashboard-data/hotel.json": "c5657d1ee4fe148fc1ed403002c476604959ee9ea192c6f068de98c80cc91623",
+    "demos/dashboard-data/sales.json": "68139ee17e5365f4e7de7f02e91227fcaed7e550e0c262eb737d5c7c136061ba",
+    "demos/dashboard-data/churn.json": "917debb538545703e2ecea61096eed537f322dc82a0e09729817186644a3e8e0",
+    "demos/dashboard-data/energy.json": "fd817257fd661c8c6010a1fe066fb6ed672548e15464a32dc0c0f8ddca876b00",
+    "demos/dashboard-data/acceptance-cases.json": "09755ccfe2755184a15fd03021f9a8a89f77d12285bf138db2094cdc4e5deb52",
     "demos/vendor/chart.umd.min.js": "48444a82d4edcb5bec0f1965faacdde18d9c17db3063d042abada2f705c9f54a"
   },
   "sources": {

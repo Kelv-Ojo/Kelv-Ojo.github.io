@@ -103,14 +103,14 @@ def main():
     for kind,data in datasets.items():
         periods=sorted({r['period'] for r in data['rows'] if 'period' in r})
         data['range']=[periods[0],periods[-1]] if periods else None
-        (OUT/f'{kind}.json').write_text(json.dumps(data,separators=(',',':'),allow_nan=False)+'\n')
-    (OUT/'acceptance-cases.json').write_text(json.dumps(cases,separators=(',',':'),allow_nan=False)+'\n')
+        (OUT/f'{kind}.json').write_text(json.dumps(data,separators=(',',':'),allow_nan=False)+'\n', encoding='utf-8', newline='\n')
+    (OUT/'acceptance-cases.json').write_text(json.dumps(cases,separators=(',',':'),allow_nan=False)+'\n', encoding='utf-8', newline='\n')
     delivery={'acceptance_cases':len(cases),'files':{f'demos/dashboard-data/{kind}.json':sha(OUT/f'{kind}.json') for kind in datasets},
               'sources':{kind:data['source_sha256'] for kind,data in datasets.items()},
               'chart_library':'Chart.js 4.5.1, MIT; self-hosted with its licence'}
     delivery['files']['demos/dashboard-data/acceptance-cases.json']=sha(OUT/'acceptance-cases.json')
     delivery['files']['demos/vendor/chart.umd.min.js']=sha(ROOT/'demos/vendor/chart.umd.min.js')
-    (OUT/'manifest.json').write_text(json.dumps(delivery,indent=2)+'\n')
+    (OUT/'manifest.json').write_text(json.dumps(delivery,indent=2)+'\n', encoding='utf-8', newline='\n')
     print(f'Exported four verified aggregate datasets and {len(cases)} independent cross-filter acceptance cases.')
 
 

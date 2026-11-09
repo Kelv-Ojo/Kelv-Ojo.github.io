@@ -1,2 +1,3 @@
 # Preserve the original vendor bytes used by the integrity manifest.
 demos/vendor/chart.umd.min.js -text
+demos/dashboard-data/*.json text eol=lf
