@@ -1,0 +1,21 @@
+/* Additions confined to the energy case study; existing site tokens are retained. */
+.gallery-jump{display:inline-block;margin:16px 0 0 18px;text-decoration:underline;text-underline-offset:4px}
+.energy-gallery{margin-top:72px;color:var(--ink);scroll-margin-top:32px}
+.energy-gallery h2{font-size:clamp(25px,3vw,34px);line-height:1.25;margin:56px 0 20px;letter-spacing:-.025em}
+.energy-gallery h3{font-size:22px;line-height:1.35;margin:0 0 10px;letter-spacing:-.02em}
+.energy-gallery p{font-size:16px;line-height:1.8;max-width:76ch}
+.gallery-intro{font-size:19px!important}.gallery-navigation{display:flex;flex-wrap:wrap;gap:12px 28px;margin:24px 0 48px}
+.gallery-navigation a{display:inline-flex;align-items:center;min-height:44px;text-decoration:underline;text-underline-offset:5px}
+.visual-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:52px;margin:32px 0 48px}
+.visual-entry{min-width:0;margin:0}.visual-entry>a{display:block;cursor:zoom-in;background:#fff;border:1px solid var(--line)}
+.visual-entry img{display:block;width:100%;height:auto;object-fit:contain;background:#fff}
+.visual-entry .visual-status{font-size:14px;font-weight:600;margin:0 0 16px;color:var(--ink)}
+.visual-entry figcaption{font-size:15px;line-height:1.8;margin-top:16px;color:var(--muted);overflow-wrap:anywhere}
+.visual-entry figcaption a,.gallery-source-note a{text-decoration:underline;text-underline-offset:4px}
+.visual-provenance{display:block;margin-top:8px}.gallery-archive{padding:22px 0;border-top:1px solid var(--line)}
+.gallery-archive summary{cursor:pointer;min-height:44px;font-size:20px;line-height:1.5;font-weight:600}
+.gallery-archive summary:focus-visible{outline:2px solid var(--gold);outline-offset:5px}
+.visual-grid--archive{grid-template-columns:repeat(2,minmax(0,1fr));gap:40px 32px;margin-bottom:18px}
+.visual-grid--archive h3{font-size:20px}.gallery-caveat{padding-left:20px;border-left:3px solid var(--gold)}
+.gallery-source-note{margin-top:32px}.energy-gallery :target{scroll-margin-top:28px}
+@media(max-width:720px){.visual-grid--archive{grid-template-columns:minmax(0,1fr)}.energy-gallery{margin-top:48px}.energy-gallery h2{margin-top:40px}.gallery-navigation{gap:8px 22px}.gallery-jump{margin-left:0}.visual-grid{gap:36px}.visual-entry h3{font-size:20px}.visual-entry figcaption{font-size:14px}}
