@@ -1,0 +1,19 @@
+name: Verify interactive dashboards
+on:
+  push:
+    paths: ['demos/**', '*.html', '.github/workflows/dashboard-validation.yml']
+  pull_request:
+    paths: ['demos/**', '*.html', '.github/workflows/dashboard-validation.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  dashboard-calculations:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - run: node --version
+      - run: node --check demos/dashboards.js
+      - run: node demos/test-dashboards.cjs

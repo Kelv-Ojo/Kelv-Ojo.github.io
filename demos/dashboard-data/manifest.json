@@ -1,0 +1,18 @@
+{
+  "acceptance_cases": 626,
+  "files": {
+    "demos/dashboard-data/hotel.json": "5044f320c27071eefe81c8cadafdc05fa7f5f444835d5a341de0344e128a553c",
+    "demos/dashboard-data/sales.json": "af196c05fc37a4334f6585a363f31b76335683ef881d4ee24ccfdc0ce542f5fa",
+    "demos/dashboard-data/churn.json": "300d28080fe08fdbc26f6e5edeaef80e461fd8241de29111ceabf2d7244087f3",
+    "demos/dashboard-data/energy.json": "aad58dd50173b6b9ea37b7e8725cb7ffb08b52af0727db55ba7efc1eb4d085eb",
+    "demos/dashboard-data/acceptance-cases.json": "5e59a730b1767867da3b41f76e4db38d2019996a719ccf1264a79ae2b6638dd5",
+    "demos/vendor/chart.umd.min.js": "48444a82d4edcb5bec0f1965faacdde18d9c17db3063d042abada2f705c9f54a"
+  },
+  "sources": {
+    "hotel": "6d984d566a7b6c97a2ed505a28e8d3459c72181e02d17d09ee9ac2fc4a897aa3",
+    "sales": "ee27df1d681890cc176b1ca7823ee3ef2df95d4ec77b0ee3869f4b665302967d",
+    "churn": "88be4b93fbe0cc83421af1c503794c97c342eca914c1576db7c276e61d61358a",
+    "energy": "14b51e350b820e4fb028891a014f25a8f96709cd84d12f87c1952ffdd1aa4534"
+  },
+  "chart_library": "Chart.js 4.5.1, MIT; self-hosted with its licence"
+}
